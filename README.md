@@ -1,14 +1,10 @@
 
-![New Screenshot](/images/screenshot.png)
+<div align="center">
+  <h4 style="font-size: 1.5em;">A Home Assistant card for Steam and Roblox integrations</h4>
+</div>
+<br>
 
-<p align="center">
-  A Home Assistant card for Steam and Roblox integrations
-</p>
-<hr>
-
-
-# Enhanced with [Roblox Custom Integration](https://github.com/jdeath/Roblox-Homeassistant/) support!
-
+## Enhanced with <a href="https://github.com/jdeath/Roblox-Homeassistant/" style="text-decoration: none;">Roblox Custom Integration</a> support!
 ![New Screenshot](/images/Screenshot1.png)
 
 
