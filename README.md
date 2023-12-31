@@ -97,15 +97,3 @@ friendly_name: hello
 game_background: true
 type: 'custom:kb-steam-card'
 ```
-
-## Stay in touch
-
-- Author - [Neil Kalman](https://github.com/thatkookooguy)
-- Website - [https://github.com/kibibit](https://github.com/kibibit)
-- StackOverflow - [thatkookooguy](https://stackoverflow.com/users/1788884/thatkookooguy)
-- Twitter - [@thatkookooguy](https://twitter.com/thatkookooguy)
-- Twitter - [@kibibit_opensrc](https://twitter.com/kibibit_opensrc)
-
-## Support
-
-Hey dude! Help me out for a couple of :beers: or a :coffee: by clicking on the sponsering link!
