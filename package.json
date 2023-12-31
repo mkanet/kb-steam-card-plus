@@ -1,7 +1,7 @@
 {
-  "name": "@kibibit/kb-steam-card",
-  "version": "0.0.0-development",
-  "description": "Lovelace Steam Card",
+  "name": "@mkanet/kb-steam-card-plus",
+  "version": "1.0.0",
+  "description": "An enhanced version of the Lovelace Steam Card, featuring additional features and Roblox Integration support.",
   "keywords": [
     "home-assistant",
     "homeassistant",
@@ -9,7 +9,8 @@
     "automation",
     "lovelace",
     "custom-cards",
-    "hassio"
+    "hassio",
+    "roblox"
   ],
   "module": "dist/kb-steam-card.js",
   "files": [
@@ -18,7 +19,7 @@
     "/themes",
     "hacs.json"
   ],
-  "author": "thatkookooguy <neilkalman@gmail.com>",
+  "author": "Your Name <your-email@example.com>",
   "license": "MIT",
   "dependencies": {
     "custom-card-helpers": "^1.6.6",
@@ -98,9 +99,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kibibit/kb-steam-card.git"
+    "url": "https://github.com/mkanet/kb-steam-card-plus.git"
   },
   "bugs": {
-    "url": "https://github.com/Kibibit/kb-steam-card/issues"
+    "url": "https://github.com/mkanet/kb-steam-card-plus/issues"
   }
 }

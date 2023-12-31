@@ -1,3 +1,7 @@
+# Enhanced with [Roblox Custom Integration](https://github.com/jdeath/Roblox-Homeassistant/) support!
+
+![New Screenshot](/images/screenshot.png)
+
 <p align="center">
   <a href="https://github.com/Kibibit/kb-steam-card/" target="blank"><img src="https://thatkookooguy.github.io/https-assets/screenshots/kb-steam-card-logo.png" width="500" alt="achievibit Logo" />
   </a>
