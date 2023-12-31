@@ -1,4 +1,5 @@
 
+![New Screenshot](/images/screenshot.png)
 
 <p align="center">
   A Home Assistant card for Steam and Roblox integrations
