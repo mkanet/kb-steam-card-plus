@@ -1,29 +1,18 @@
-# Enhanced with [Roblox Custom Integration](https://github.com/jdeath/Roblox-Homeassistant/) support!
 
-![New Screenshot](/images/screenshot.png)
 
 <p align="center">
-  <a href="https://github.com/Kibibit/kb-steam-card/" target="blank"><img src="https://thatkookooguy.github.io/https-assets/screenshots/kb-steam-card-logo.png" width="500" alt="achievibit Logo" />
-  </a>
-  <h2 align="center">
-    @kibibit/hass-kibibit-theme
-  </h2>
-</p>
-<p align="center">
-  <a href="https://www.npmjs.com/package/@kibibit/kb-steam-card"><img src="https://img.shields.io/npm/v/@kibibit/kb-steam-card/latest.svg?style=for-the-badge&logo=npm&color=CB3837"></a>
-</p>
-<p align="center">
-  <a href="https://github.com/custom-components/hacs"><img src="https://img.shields.io/badge/HACS-Default-orange.svg"></a>
-  <a href="https://imgur.com/gallery/SQJNbWb"><img src="https://img.shields.io/badge/Screenshots-Click_Here-ff3860.svg"></a>
-</p>
-<p align="center">
-  A Home Assistant card for Steam integrations
+  A Home Assistant card for Steam and Roblox integrations
 </p>
 <hr>
 
-([Theme](https://github.com/kibibit/hass-kibibit-theme) used in screenshots)
 
-## Screenshots
+# Enhanced with [Roblox Custom Integration](https://github.com/jdeath/Roblox-Homeassistant/) support!
+
+![New Screenshot](/images/Screenshot1.png)
+
+
+## More Screenshots
+
 
 ### away \ offline state
 
