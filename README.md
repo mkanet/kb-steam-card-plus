@@ -1,14 +1,10 @@
 
-![New Screenshot](/images/screenshot.png)
+<div align="center">
+  <h4 style="font-size: 1.5em;">A Home Assistant card for Steam and Roblox integrations</h4>
+</div>
+<br>
 
-<p align="center">
-  A Home Assistant card for Steam and Roblox integrations
-</p>
-<hr>
-
-
-# Enhanced with [Roblox Custom Integration](https://github.com/jdeath/Roblox-Homeassistant/) support!
-
+## Enhanced with <a href="https://github.com/jdeath/Roblox-Homeassistant/" style="text-decoration: none;">Roblox Custom Integration</a> support!
 ![New Screenshot](/images/Screenshot1.png)
 
 
@@ -101,15 +97,3 @@ friendly_name: hello
 game_background: true
 type: 'custom:kb-steam-card'
 ```
-
-## Stay in touch
-
-- Author - [Neil Kalman](https://github.com/thatkookooguy)
-- Website - [https://github.com/kibibit](https://github.com/kibibit)
-- StackOverflow - [thatkookooguy](https://stackoverflow.com/users/1788884/thatkookooguy)
-- Twitter - [@thatkookooguy](https://twitter.com/thatkookooguy)
-- Twitter - [@kibibit_opensrc](https://twitter.com/kibibit_opensrc)
-
-## Support
-
-Hey dude! Help me out for a couple of :beers: or a :coffee: by clicking on the sponsering link!
