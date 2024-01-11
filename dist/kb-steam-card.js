@@ -191,17 +191,18 @@ const J=window.ShadowRoot&&(void 0===window.ShadyCSS||window.ShadyCSS.nativeShad
     </ha-card>
   `;
 }
-setConfig(t){if(!t.entities&&!t.entity)throw new Error("You need to define either a single entity or an entities field");this.config=t}getCardSize(){return this.config.entities?this.config.entities.length+1:2}_toggle(t){this.hass.callService("homeassistant","toggle",{entity_id:t.entity_id})}createEntitiesCard(t){if("string"==typeof t){const e=[];Object.values(this.hass.states).forEach((s=>{s.entity_id.startsWith(t)&&e.push(s.entity_id)})),t=e}if(this.config.online_only){const e=[];t.forEach((t=>{const s=this.hass.states[t];s&&s.state&&"offline"!==s.state&&e.push(t)})),t=e}return [...t.map(((e, s) => {const i=this.hass.states[e];return i?M`
+setConfig(t){if(!t.entities&&!t.entity)throw new Error("You need to define either a single entity or an entities field");this.config=t}getCardSize(){return this.config.entities?this.config.entities.length+1:2}_toggle(t){this.hass.callService("homeassistant","toggle",{entity_id:t.entity_id})}createEntitiesCard(t){if("string"==typeof t){const e=[];Object.values(this.hass.states).forEach((s=>{s.entity_id.startsWith(t)&&e.push(s.entity_id)})),t=e}if(this.config.online_only){const e=[];t.forEach((t=>{const s=this.hass.states[t];s&&s.state&&"offline"!==s.state&&e.push(t)})),t=e}return [...t.map(((e, s) => {const i=this.hass.states[e];let n='';if(this.config.gaming_network_overlay){if(i.entity_id.includes('roblox')){n='R'}else if(i.entity_id.includes('steam')){n='S'}else if(i.entity_id.endsWith('_status')){n='X';if(i.state.toLowerCase() === 'offline' || i.state.toLowerCase().endsWith(': online')){i.state = 'online';}}}return i?M`
               <div
-                class="kb-steam-multi kb-clickable ${s===t.length-1?"kb-last":""} ${i.state}"
+                class="kb-steam-multi kb-clickable ${s===t.length-1?"kb-last":""} ${i.state === 'Home' ? 'Home' : /.*_status$/.test(i.entity_id) && !/last seen/i.test(i.state) ? 'online' : i.state.toLowerCase()}"
                 @click=${()=>this.handlePopup(i)}
               >
                 <div class="kb-steam-user">
                   <img src="${i.attributes.entity_picture}" class="kb-steam-avatar" />
-                  <div class="kb-steam-username">${i.attributes.friendly_name}</div>
+                  <div class="kb-steam-username">${i.attributes.friendly_name.replace(' Status', '')}</div>
                 </div>
                 <div class="kb-steam-value">${i.attributes.game||i.state}</div>
-                ${i.attributes.game&&this.config.game_background?M` <img src="${i.attributes.game_image_header}" class="kb-steam-game-bg" /> `:""}
+                ${i.attributes.game&&this.config.game_background?M` <img src="${i.attributes.game_image_header}" class="kb-steam-game-bg" /> ` : ""}
+                <div class="kb-steam-icon-overlay">${n}</div>
               </div>
             `:M` <div class="not-found">Entity ${e} not found.</div> `}))]}handlePopup(t){const e=t.entity_id,s=new Event("hass-more-info",{composed:!0});s.detail={entityId:e},this.dispatchEvent(s)}createEntityCard(t){return M`
       <div class="kb-container kb-clickable" @click=${()=>this.handlePopup(t)}>
@@ -225,13 +226,15 @@ setConfig(t){if(!t.entities&&!t.entity)throw new Error("You need to define eithe
         </div>
         ${this.renderCurrentlyPlayingGame(t)}
       </div>
-    `}formatLastOnline(t){return rt(new Date(t))}renderUserAvatar(t){return t.attributes.entity_picture?M` <img src="${t.attributes.entity_picture}" class="kb-steam-avatar" /> `:M` <ha-icon icon="${t.attributes.icon}" class="kb-steam-avatar"></ha-icon> `}renderCurrentlyPlayingGame(t){return t.attributes.game?M`
+    `}formatLastOnline(t){return rt(new Date(t))}renderUserAvatar(t){return t.attributes.entity_picture?M` <img src="${t.attributes.entity_picture}" class="kb-steam-avatar" /> `:M` <ha-icon icon="${t.attributes.icon}" class="kb-steam-avatar"></ha-icon> `}renderCurrentlyPlayingGame(t) {
+      const playingText = t.state.toLowerCase() === 'playing' ? 'Playing ' : '';
+      return t.attributes.game ? M`
           <div class="kb-steam-now-playing">
             <div class="label">Now Playing</div>
-            <div class="game-title">${t.attributes.game}</div>
+            <div class="game-title">${playingText}${t.attributes.game}</div>
             <img class="game-img" src="${t.attributes.game_image_header}" />
           </div>
-        `:M``}static get styles(){return K`
+        `:M``;}static get styles(){return K`
       /* :host {
       } */
 
@@ -373,6 +376,9 @@ setConfig(t){if(!t.entities&&!t.entity)throw new Error("You need to define eithe
         background-image: radial-gradient(top, #616161 0%, #616161 20%, #535353 60%);
         content: '';
         z-index: 3;
+        display: flex; /* Make it a flex container */
+        align-items: center; /* Center children vertically */
+        justify-content: center; /* Center children horizontally */
       }
 
       .kb-steam-multi.online::before {
@@ -390,9 +396,30 @@ setConfig(t){if(!t.entities&&!t.entity)throw new Error("You need to define eithe
         background: #FFC700;
       }
 
+      .kb-steam-multi.Home::before {
+        box-shadow: 0 0 1em #1c1c17, 0 0 1em #AF8600;
+        background: #FFC700;
+      }
+
       .kb-last {
         margin-bottom: 0;
       }
+      
+      .kb-steam-multi .kb-steam-icon-overlay {
+        position: absolute;
+        top: 82%;
+        left: calc(2.37em + 1px);
+        transform: translateY(-50%);
+        z-index: 4;
+        font-size: 0.88em;
+        font-weight: 800;
+        color: rgb(64, 64, 64);
+        pointer-events: none;
+        font-family: "Arial Black", Gadget, sans-serif;
+      }
+
+      .kb-steam-multi.playing .kb-steam-value { color: green; }
+
     `}};var ot;
 /**
 @license
