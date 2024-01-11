@@ -86,3 +86,8 @@ resources:
   url: '<url-to-card.js>'
   type: module
 ```
+<br>
+
+---
+
+Special thanks to <b>"Kibibit"</b> for the original [kb-steam-card](https://github.com/Kibibit/kb-steam-card) sourcecode ⭐
